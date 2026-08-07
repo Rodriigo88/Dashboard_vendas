@@ -75,7 +75,7 @@ st.markdown(f'A tabela possui :blue[{dados_filtrados.shape[0]}] linhas e :blue[{
 st.markdown('Esvreva um nome para o arquivo')
 coluna1,coluna2 = st.columns(2)
 with coluna1:
-    nome_arquivo = st.text_input('',label_visibility='collapsed',value='dados')
+    nome_arquivo = st.text_input('Nome do arquivo',label_visibility='collapsed',value='dados')
     nome_arquivo += '.csv'
 with coluna2:   
     st.download_button(label='Fazer download da tabela em csv',data=converte_csv(dados_filtrados), file_name=nome_arquivo,mime='text/csv',on_click=mensagem_sucesso())
