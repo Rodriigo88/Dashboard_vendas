@@ -128,23 +128,23 @@ with aba1:
     coluna1,coluna2 = st.columns(2)
     with coluna1:
         st.metric('Receita total',formata_receita(dados_vendas['Preço'].sum(),'R$'))
-        st.plotly_chart(fig_mapa_receita,use_container_width=True)
-        st.plotly_chart(fig_receita_estados,use_container_width=True)
+        st.plotly_chart(fig_mapa_receita)
+        st.plotly_chart(fig_receita_estados)
     with coluna2:
         st.metric('Quantidade de vendas',formata_receita(dados_vendas.shape[0]))
-        st.plotly_chart(fig_receita_mensal,use_container_width=True)
-        st.plotly_chart(fig_receita_categoria,use_container_width=True)
+        st.plotly_chart(fig_receita_mensal)
+        st.plotly_chart(fig_receita_categoria)
 
 with aba2:
     coluna1,coluna2 = st.columns(2)
     with coluna1:
         st.metric('Receita total',formata_receita(dados_vendas['Preço'].sum(),'R$'))
-        st.plotly_chart(fig_contagem_mapa,use_container_width=True)
-        st.plotly_chart(fig_top_contagem_mensal,use_container_width=True)
+        st.plotly_chart(fig_contagem_mapa)
+        st.plotly_chart(fig_top_contagem_mensal)
     with coluna2:
         st.metric('Quantidade de vendas',formata_receita(dados_vendas.shape[0]))
-        st.plotly_chart(fig_contagem_mensal,use_container_width=True)
-        st.plotly_chart(fig_contagem_categoria,use_container_width=True)
+        st.plotly_chart(fig_contagem_mensal)
+        st.plotly_chart(fig_contagem_categoria)
 
 with aba3:
     qtd_vendedores = st.number_input('Quantidade de vendedores',2,10,5)
