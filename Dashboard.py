@@ -20,7 +20,7 @@ else:
 
 query_string = {'regiao':regiao.lower(),'ano':ano}
 response = requests.get(url,params=query_string)
-dados_vendas = pd.DataFrame.from_dict(response.json())
+dados_vendas = pd.DataFrame(response.json())
 dados_vendas['Data da Compra'] = pd.to_datetime(dados_vendas['Data da Compra'],format=r'%d/%m/%Y')
 
 filtro_vendedores = st.sidebar.multiselect('Vendedores',dados_vendas['Vendedor'].unique())
